@@ -1,7 +1,11 @@
 local KeySystem = loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/LuaU-Free-Key-System-UI/main/source.lua"))()
-local PlatoBoostLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lunahubv2/Devs/refs/heads/main/platoboost.lua"))()
 local KeyValid = false
 local response = KeySystem:Init({
+		
+local service = 362;  -- your service id, this is used to identify your service.
+local secret = "b613679a0814d9ec772f95d778c35fc5ff1697c493715653c6c712144292c5ad";  -- make sure to obfuscate this if you want to ensure security.
+local useNonce = true;  -- use a nonce to prevent replay attacks and request tampering.
+	
 	Debug=false, -- <bool> Prints some output in console when true
 	Title="ExampleHub | Key System", -- <string or nil> Title of key system
 	Description=nil, -- <string or nil> Description of key system

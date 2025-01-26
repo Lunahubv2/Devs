@@ -393,8 +393,8 @@ end)
 
 bruh9.MouseButton1Click:Connect(function()
 local key = TextBox.Text;
-local Verify = verifyKey(TextBox.Text);
-  if bruh3.Text == key then
+local bruh3 = verifyKey(TextBox.Text);
+    if Verify then
     bruh3.Text = "Valid Key"
     wait(1)
     print("Hi World :D") --Change this to ur script

@@ -262,14 +262,14 @@ local KSresponse = KeysystemLibrary:Init({
 	Debug=false, 
 	Link=copyLink(), 
 	Verify=function(key) 
-	local key = keyBox.Text;
-        local success = verifyKey(key);		
-		 if success then
-        print("key is valid.");
-    else
-        print("key is invalid.");
-    end
-end)
+	       local key = keyBox.Text;
+               local success = verifyKey(key);		
+		     if success then
+                     print("key is valid.");
+                 else
+                     print("key is invalid.");
+                 end
+             end)
 }) 
 
 -- return nil on closing key system

@@ -385,15 +385,10 @@ end)
 
 bruh9.MouseButton1Click:Connect(function()
 local key = TextBox.Text;
-local bruh3 = verifyKey(TextBox.Text);
-    if Verify then
-    bruh3.Text = "Valid Key"
+local Verify = verifyKey(TextBox.Text);
+if Verify then
     wait(1)
     print("Hi World :D") --Change this to ur script
     gui:Destroy()
-    else
-    bruh3.Text = "Invalid Key! Try Again"
-    wait(1)
-    bruh3.Text = "   Enter Key Here"
   end
 end)

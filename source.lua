@@ -259,16 +259,9 @@ local response = KeySystem:Init({
 	Discord="test", -- <string or nil> Button to join your discord server
 	SaveKey=false, -- <bool or nil> Just auto save key
 	Verify=function(key) -- <function> Verify is key valid
-	       local Verify = function(key)		
-		if Verify then
-      KeyValid=true
-			return true
-		else
-			return false
-		end
-	end,
-	GuiParent = game.CoreGui, -- <object or nil> :3
-})
-
-if not response or not KeyValid then return end
-loadstring(game:HttpGet"https://raw.githubusercontent.com/Lunahubv2/LunaHubV2/refs/heads/main/source.lua")()
+	       local Verify = function(key);
+               local success = verifyKey(key);
+               if Verify then
+               loadstring(game:HttpGet"https://raw.githubusercontent.com/Lunahubv2/LunaHubV2/refs/heads/main/source.lua")()
+	  end
+  end)

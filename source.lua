@@ -387,16 +387,13 @@ bruh11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 bruh11.Thickness = 2
 bruh11.Parent = bruh9
 
-
-local key = keyBox.Text;
-local success = verifyKey(key);
-
-
 bruh6.MouseButton1Click:Connect(function()
   copyLink();
 end)
 
 bruh9.MouseButton1Click:Connect(function()
+local key = TextBox.Text;
+local Verify = verifyKey(TextBox.Text);
   if bruh3.Text == key then
     bruh3.Text = "Valid Key"
     wait(1)

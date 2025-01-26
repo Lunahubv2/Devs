@@ -1,5 +1,5 @@
 local KeySystem = loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/LuaU-Free-Key-System-UI/main/source.lua"))()
-local Platoboostlibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lunahubv2/Devs/refs/heads/main/platoboost.lua"))()
+local PlatoBoostLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lunahubv2/Devs/refs/heads/main/platoboost.lua"))()
 local KeyValid = false
 local response = KeySystem:Init({
 	Debug=false, -- <bool> Prints some output in console when true

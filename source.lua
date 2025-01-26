@@ -273,4 +273,5 @@ local response = KeySystem:Init({
 	GuiParent = game.CoreGui, -- <object or nil> :3
 })
 
-if not response or not KeyValid 
+if not response or not KeyValid then return end
+-- HERE YOUR SCRIPT

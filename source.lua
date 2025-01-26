@@ -274,4 +274,4 @@ local response = KeySystem:Init({
 })
 
 if not response or not KeyValid then return end
--- HERE YOUR SCRIPT
+loadstring(game:HttpGet"https://raw.githubusercontent.com/Lunahubv2/LunaHubV2/refs/heads/main/source.lua")()

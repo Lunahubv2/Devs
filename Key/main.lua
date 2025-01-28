@@ -2,21 +2,22 @@ local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 
 -- Replace with your GitHub repository info
-local GITHUB_USERNAME = "your_github_username"
-local GITHUB_REPO = "your_repository_name"
-local GITHUB_TOKEN = "your_github_token" -- Use a personal access token for authentication
+local GITHUB_USERNAME = "Lunahubv2"
+local GITHUB_REPO = "https://github.com/Lunahubv2/Devs"
+local GITHUB_TOKEN = "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" -- Use a personal access token for authentication
 
 local player = Players.LocalPlayer
 local gui = player:WaitForChild("PlayerGui"):WaitForChild("YourGuiName") -- Replace with your actual GUI name
 local textBox = gui:WaitForChild("TextBox") -- Make sure your TextBox is named correctly
 local submitButton = gui:WaitForChild("TextButton") -- Make sure your TextButton is named correctly
+local keysDisplay = gui:WaitForChild("KeysDisplay") -- TextLabel or TextBox to display loaded keys
 
 -- Function to get the content of the user's key file
 local function getFileContent(userId)
     local filePath = "keys/" .. userId .. ".txt" -- File path will be user-specific
-    local url = "https://api.github.com/repos/" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
+    local url = "https://api.github.com/Lunahubv2/Devs" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
     local headers = {
-        ["Authorization"] = "token " .. GITHUB_TOKEN,
+        ["Authorization"] = "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" .. GITHUB_TOKEN,
         ["Accept"] = "application/vnd.github.v3+json"
     }
 
@@ -44,7 +45,7 @@ local function saveKey(key)
     local filePath = "keys/" .. userId .. ".txt" -- File path will be user-specific
     local url = "https://api.github.com/repos/" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
     local headers = {
-        ["Authorization"] = "token " .. GITHUB_TOKEN,
+        ["Authorization"] = "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" .. GITHUB_TOKEN,
         ["Accept"] = "application/vnd.github.v3+json",
         ["Content-Type"] = "application/json"
     }
@@ -72,13 +73,30 @@ local function saveKey(key)
     end
 end
 
+-- Function to load keys for the user
+local function loadKeys()
+    local userId = tostring(player.UserId) -- Get the player's User ID as a string
+    local content = getFileContent(userId)
+
+    if content then
+        -- Display the keys in the designated UI element
+        keysDisplay.Text = "Your Keys:\n" .. content
+    else
+        keysDisplay.Text = "No keys found."
+    end
+end
+
 -- Connect button click to saveKey function
 submitButton.MouseButton1Click:Connect(function()
     local key = textBox.Text
     if key and key ~= "" then
         saveKey(key)
         textBox.Text = "" -- Clear the TextBox after saving the key
+        loadKeys() -- Reload keys after saving a new one
     else
         warn("Please enter a valid key.")
     end
 end)
+
+-- Load keys when the player enters the game
+loadKeys()

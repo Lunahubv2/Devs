@@ -5,7 +5,7 @@ local Players = game:GetService("Players")
 -- GitHub Repository info
 local GITHUB_USERNAME = "Lunahubv2"
 local GITHUB_REPO = "Devs"
-local GITHUB_TOKEN = "your_github_token_here" -- Use a personal access token for authentication safely
+local GITHUB_TOKEN = "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" -- Use a personal access token for authentication safely
 
 -- Platoboost configuration
 local service = 362  -- Your service ID
@@ -76,7 +76,7 @@ submitButton.Text = "Submit Key"
 -- Function to get content of the user's key file
 local function getFileContent(userId)
     local filePath = "keys/" .. userId .. ".txt" -- File path will be user-specific
-    local url = "https://api.github.com/repos/" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
+    local url = "https://api.github.com/Lunahubv2/Devs/Keys" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
     local headers = {
         ["Authorization"] = "token " .. GITHUB_TOKEN,
         ["Accept"] = "application/vnd.github.v3+json"
@@ -104,9 +104,9 @@ local function saveKey(key)
     content = content .. key .. "\n"
 
     local filePath = "keys/" .. userId .. ".txt" -- File path will be user-specific
-    local url = "https://api.github.com/repos/" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
+    local url = "https://api.github.com/Lunahubv2/Devs/Keys" .. GITHUB_USERNAME .. "/" .. GITHUB_REPO .. "/contents/" .. filePath
     local headers = {
-        ["Authorization"] = "token " .. GITHUB_TOKEN,
+        ["Authorization"] = "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" .. GITHUB_TOKEN,
         ["Content-Type"] = "application/json"
     }
 

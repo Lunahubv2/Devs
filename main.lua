@@ -1,9 +1,6 @@
 local KeyValid,KeyPremium, KeysystemLibrary, KeyGuardLibrary = false,false,loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/LuaU-Free-Key-System-UI/main/source.lua"))(),loadstring(game:HttpGet("https://cdn.keyguardian.org/library/v1.0.0.lua"))()
 local trueData = "9cb8d16b35d548b7b04773541624d585"
 local falseData = "b0565d02583e4cb483d652a9c877a1f6"
-local function(key) = KeyGuardLibrary.validateDefaultKey(key)
-local function(key) = KeyGuardLibrary.validatePremiumKey(key)
-local getkey = KeyGuardLibrary.getLink()
 
 KeyGuardLibrary.Set({
 	publicToken = "5c114f2ec1814466928cd4b947039530",
@@ -13,6 +10,8 @@ KeyGuardLibrary.Set({
 })
 
 -- https://github.com/OopssSorry/LuaU-Free-Key-System-UI
+local function(key) = KeyGuardLibrary.validateDefaultKey(key)
+local function(key) = KeyGuardLibrary.validatePremiumKey(key)
 local KSresponse = KeysystemLibrary:Init({
 	Title="ExampleHub",  -- TITLE HERE
 	
